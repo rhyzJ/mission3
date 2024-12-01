@@ -13,7 +13,7 @@ app.use(express.json());
 // use = router for a specific path
 // app.use("/api", route);
 
-// ----------ENDPOINTS------------ ///
+// ----------ENDPOINTS------------ //
 
 // root
 app.get("/", (req, res) => {
