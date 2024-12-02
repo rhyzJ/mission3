@@ -10,8 +10,8 @@
   gap: 1.5rem;
 }
 
-.container h2 {
-  color: #002B5C;
+.heading {
+  color: #002b5c;
   margin-bottom: 1rem;
   text-align: center;
   font-size: 2rem;
@@ -20,10 +20,17 @@
 .jobTitleContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.5rem;
 }
 
-.container input[type="text"] {
+.label {
+  color: #002b5c;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.inputBox {
   width: 100%;
   padding: 12px;
   border: 2px solid #e0e0e0;
@@ -32,9 +39,10 @@
   transition: border-color 0.3s ease;
 }
 
-.container input[type="text"]:focus {
+.inputBox:focus {
+  /* removes the default blue outline that appears when an input element is focused */
   outline: none;
-  border-color: #002B5C;
+  border-color: #053975;
 }
 
 .chatHistoryContainer {
@@ -60,7 +68,7 @@
 }
 
 .role strong {
-  color: #002B5C;
+  color: #002b5c;
 }
 
 .userInputContainer {
@@ -73,10 +81,10 @@
   flex: 1;
 }
 
-.container button {
+.submitButton {
   width: 100%;
   padding: 12px;
-  background-color: #E63946;
+  background-color: #e63946;
   color: white;
   border: none;
   border-radius: 6px;
@@ -85,18 +93,23 @@
   transition: background-color 0.3s ease;
 }
 
-.container button:hover {
-  background-color: #DC2D3A;
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* Add some responsive design */
+.submitButton:hover {
+  background-color: #07629a;
+}
+
 @media (max-width: 768px) {
   .container {
     margin: 1rem;
     padding: 1rem;
     gap: 1rem;
   }
-  
+
   .container h2 {
     font-size: 1.5rem;
   }

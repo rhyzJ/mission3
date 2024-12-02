@@ -31,14 +31,15 @@ function InterviewApp() {
   return (
     <>
       <div className={styles.container}>
-        <h2>Mock Interview</h2>
+        <h2 className={styles.heading}>Mock Interview</h2>
         <div className={styles.jobTitleContainer}>
-          <label>Job Title:</label>
+          <label className={styles.label}>Job Title:</label>
           <input
             type="text"
             value={jobTitle}
             onChange={(e) => setJobTitle(e.target.value)}
             placeholder="Enter Job Title Here"
+            className={styles.inputBox}
           />
         </div>
         {/*chat history display */}
@@ -58,9 +59,11 @@ function InterviewApp() {
             value={userResponse}
             onChange={(e) => setUserResponse(e.target.value)}
             placeholder="Type your message here"
-            className={styles.userResponseInput}
+            className={styles.inputBox}
           />
-          <button onClick={handleSubmission}>Send message</button>
+          <button onClick={handleSubmission} className={styles.submitButton}>
+            Send message
+          </button>
         </div>
       </div>
     </>
