@@ -1,14 +1,19 @@
-const cors = require("cors");
 const express = require("express");
+const cors = require("cors");
+const { GoogleGenerativeAI } = require("@google/generative-ai"); // imports gemini library
+
 require("dotenv").config();
+
 const app = express();
 
 // import routes
-// const route = require("./routes/routeName");
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); //to parse json
+
+const genAi = new GoogleGenerativeAI(process.env.API_KEY); // connects to gemini api
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); //picking specificc model
 
 // use = router for a specific path
 // app.use("/api", route);
