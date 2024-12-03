@@ -4,8 +4,9 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 require("dotenv").config();
 
-const app = express();
+// middleware
 app.use(cors());
+app.use(express.json());
 
 let chatSession = null;
 
@@ -70,10 +71,6 @@ app.post("/api/interview", async (req, res) => {
     res.status(500).json({ error: "Failed to get AI response." });
   }
 });
-
-// middleware
-app.use(cors());
-app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Connected my dudes 🔌");
