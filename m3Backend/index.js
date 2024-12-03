@@ -8,7 +8,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-let chatSession = null;
+let chatSession = null; //
 
 // start interview
 app.post("/api/startInterview", async (req, res) => {
