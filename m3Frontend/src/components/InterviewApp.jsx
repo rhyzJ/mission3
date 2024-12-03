@@ -39,12 +39,11 @@ function InterviewApp() {
 
   const handleStartInterview = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:4000/api/startInterview",
-        {
-          jobTitle,
-        }
-      );
+      await axios.post("http://localhost:4000/api/startInterview", {
+        jobTitle,
+        resetInterview,
+      });
+
       setChatHistory([
         {
           role: "ai",
