@@ -1,20 +1,30 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: #0073cf;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
   gap: 1.5rem;
+  font-family: "Lato", sans-serif;
+}
+
+.logo {
+  width: 10rem;
+  border-radius: 100%;
 }
 
 .heading {
-  color: #002b5c;
+  color: #0073cf;
   margin-bottom: 1rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  background-color: #ffffff;
+  width: 50rem;
 }
 
 .jobTitleContainer {
@@ -22,10 +32,11 @@
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
+  width: 35rem;
 }
 
 .label {
-  color: #002b5c;
+  color: #fefcfc;
   font-weight: 500;
   font-size: 1.1rem;
 }
@@ -33,14 +44,14 @@
 .inputBox {
   width: 100%;
   padding: 12px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #b71234;
   border-radius: 6px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  width: 35rem;
 }
 
 .inputBox:focus {
-  /* removes the default blue outline that appears when an input element is focused */
   outline: none;
   border-color: #053975;
 }
@@ -84,7 +95,7 @@
 .submitButton {
   width: 100%;
   padding: 12px;
-  background-color: #e63946;
+  background-color: #b71234;
   color: white;
   border: none;
   border-radius: 6px;
@@ -101,6 +112,17 @@
 
 .submitButton:hover {
   background-color: #07629a;
+}
+
+.error {
+  color: #b71234;
+  background-color: #ffe6e6;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #b71234;
+  margin: 1rem 0;
+  text-align: center;
+  width: 35rem;
 }
 
 @media (max-width: 768px) {
