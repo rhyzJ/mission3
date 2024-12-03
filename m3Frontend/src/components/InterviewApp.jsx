@@ -6,14 +6,16 @@ function InterviewApp() {
   const [jobTitle, setJobTitle] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [userResponse, setUserResponse] = useState("");
+  const [resetInterview, setResetInterview] = useState(false);
 
   //   form submissoion
   const handleSubmission = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/interview", {
+      const response = await axios.post("http://localhost:4000/api/interview", {
         jobTitle,
         userResponse,
+        resetInterview,
       });
 
       //updating the chat history with user/ai responses (ui)
@@ -28,6 +30,33 @@ function InterviewApp() {
       console.error(" ❌ error sending reponse:", error);
     }
   };
+
+  const handleReset = () => {
+    setChatHistory([]);
+    setUserResponse("");
+    setResetInterview(true);
+  };
+
+  const handleStartInterview = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/startInterview",
+        {
+          jobTitle,
+        }
+      );
+      setChatHistory([
+        {
+          role: "ai",
+          text: response.data.aiResponse,
+        },
+      ]);
+      console.log("Interview started");
+    } catch (error) {
+      console.error("❌ Error starting interview:", error);
+    }
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -71,6 +100,14 @@ function InterviewApp() {
             Send message
           </button>
         </div>
+        {/* Start Interview button */}
+        <button onClick={handleStartInterview} className={styles.startButton}>
+          Start Interview
+        </button>
+        {/* Reset button */}
+        <button onClick={handleReset} className={styles.resetButton}>
+          Reset Interview
+        </button>
       </div>
     </>
   );
