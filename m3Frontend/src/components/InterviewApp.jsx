@@ -31,6 +31,11 @@ function InterviewApp() {
   return (
     <>
       <div className={styles.container}>
+        <img
+          className={styles.logo}
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuUSrMhuoa9oRL7pyUTPJASr16X0Pm6Om8yQ&s"
+          alt="turners logo"
+        />
         <h2 className={styles.heading}>Mock Interview</h2>
         <div className={styles.jobTitleContainer}>
           <label className={styles.label}>Job Title:</label>
@@ -43,15 +48,16 @@ function InterviewApp() {
           />
         </div>
         {/*chat history display */}
-        <div className={styles.chatHistoryContainer}>
-          {chatHistory.map((entry, index) => (
-            <div key={index} className={styles.role}>
-              <strong>{entry.role === "user" ? "You" : "AI"}</strong>
-              <span>{entry.text}</span>
-            </div>
-          ))}
-        </div>
-
+        {chatHistory.length > 0 && (
+          <div className={styles.chatHistoryContainer}>
+            {chatHistory.map((entry, index) => (
+              <div key={index} className={styles.role}>
+                <strong>{entry.role === "user" ? "You" : "AI"}</strong>
+                <span>{entry.text}</span>
+              </div>
+            ))}
+          </div>
+        )}
         {/* user response input */}
         <div className={styles.userInputContainer}>
           <input
