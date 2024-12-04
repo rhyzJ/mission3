@@ -65,7 +65,7 @@ Begin the interview now.`;
     console.log("Chat session initialized:", chatSession);
 
     const initialResponse =
-      "Hi there I'm an Interview chatbot, Tell me about yourself."; // Initial response from AI to start the interview
+      "Hi there I'm an Interview chatbot, what is your name?"; // Initial response from AI to start the interview
     res.json({ aiResponse: initialResponse });
   } catch (error) {
     console.error("❌ Error in starting interview:", error);
