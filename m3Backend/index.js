@@ -65,7 +65,7 @@ app.post("/api/startInterview", async (req, res) => {
 
     console.log("Chat session initialized:", chatSession);
 
-    const initialResponse = "Tell me about yourself.";
+    const initialResponse = "Tell me about yourself."; // Initial response from AI to start the interview
     res.json({ aiResponse: initialResponse });
   } catch (error) {
     console.error("❌ Error in starting interview:", error);
