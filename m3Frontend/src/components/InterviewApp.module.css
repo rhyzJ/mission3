@@ -60,6 +60,8 @@
   border-color: #053975;
 }
 
+/* chat history */
+
 .chatHistoryContainer {
   display: flex;
   flex-direction: column;
@@ -96,27 +98,61 @@
 .userResponseInput {
   flex: 1;
 }
+/* buttons */
+.submitButton,
+.startButton,
+.resetButton {
+  width: 35rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+  padding: 15px 32px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
 
 .submitButton {
-  width: 100%;
-  padding: 12px;
   background-color: #b71234;
   color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover{
+  background-color: #4e0715;
+}
+
+.startButton {
+  background-color: #b71234;
+  color: white;
+}
+
+.startButton:hover {
+  background-color: rgb(2, 92, 2);
+}
+
+.resetButton {
+  background-color: #fefcfc;
+  font-style: italic;
+  color: black;
+  font-weight: 500;
+  width: 25%;
+}
+
+.resetButton:hover {
+  background-color: #4e0715;
+  color: white;
 }
 
 .inputBox {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.submitButton:hover {
-  background-color: #07629a;
 }
 
 .error {
@@ -128,6 +164,13 @@
   margin: 1rem 0;
   text-align: center;
   width: 35rem;
+}
+
+.submitButton,
+.startButton {
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
 }
 
 @media (max-width: 768px) {

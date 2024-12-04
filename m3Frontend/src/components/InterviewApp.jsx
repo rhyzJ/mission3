@@ -9,7 +9,6 @@ function InterviewApp() {
   const [resetInterview, setResetInterview] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
 
-
   const handleSubmission = async (e) => {
     e.preventDefault();
     try {
@@ -18,7 +17,6 @@ function InterviewApp() {
         userResponse,
         resetInterview,
       });
-
 
       setChatHistory([
         ...chatHistory,
@@ -47,7 +45,6 @@ function InterviewApp() {
         "❌ Error sending response:",
         error.response ? error.response.data : error.message
       );
-
     }
   };
 
@@ -56,7 +53,6 @@ function InterviewApp() {
     setUserResponse("");
     setResetInterview(true);
     setQuestionCount(0);
-
   };
 
   const handleStartInterview = async () => {
@@ -80,7 +76,7 @@ function InterviewApp() {
         console.log("No content received from the server.");
       }
 
-      console.log("Interview started");
+      console.log("✅ Interview started");
     } catch (error) {
       console.error("❌ Error starting interview:", error);
     }
@@ -106,38 +102,47 @@ function InterviewApp() {
           />
         </div>
 
-        {/* chat history display */}
+        {/* start interview */}
+        {chatHistory.length < 1 && (
+          <button onClick={handleStartInterview} className={styles.startButton}>
+            Start Interview
+          </button>
+        )}
 
+        {/* chat history display */}
         {chatHistory.length > 0 && (
           <div className={styles.chatHistoryContainer}>
             {chatHistory.map((entry, index) => (
               <div key={index} className={styles.role}>
-                <strong>{entry.role === "user" ? "You" : "AI"}</strong>
+                <strong>
+                  {entry.role === "user" ? "You" : "AI Interviewer"}
+                </strong>
                 <span>{entry.text}</span>
               </div>
             ))}
           </div>
         )}
+
         {/* user response input */}
-        <div className={styles.userInputContainer}>
-          <input
-            type="text"
-            value={userResponse}
-            onChange={(e) => setUserResponse(e.target.value)}
-            placeholder="Type your message here"
-            className={styles.inputBox}
-          />
-          <button onClick={handleSubmission} className={styles.submitButton}>
-            Send message
-          </button>
-        </div>
-        {/* Start Interview button */}
-        <button onClick={handleStartInterview} className={styles.startButton}>
-          Start Interview
-        </button>
+
+        {chatHistory.length > 0 && (
+          <div className={styles.userInputContainer}>
+            <input
+              type="text"
+              value={userResponse}
+              onChange={(e) => setUserResponse(e.target.value)}
+              placeholder="Type your response here"
+              className={styles.inputBox}
+            />
+            <button onClick={handleSubmission} className={styles.submitButton}>
+              Send message
+            </button>
+          </div>
+        )}
+
         {/* Reset button */}
         <button onClick={handleReset} className={styles.resetButton}>
-          Reset Interview
+          Restart Interview
         </button>
       </div>
     </>
