@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import styles from "./InterviewApp.module.css";
 
@@ -8,6 +8,16 @@ function InterviewApp() {
   const [userResponse, setUserResponse] = useState("");
   const [resetInterview, setResetInterview] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
+
+  // create a ref hook to hold the chat history container element
+  const chatHistoryEndRef = useRef(null);
+
+  // scroll to the bottom when chatHistory changes
+  useEffect(() => {
+    if (chatHistoryEndRef.current) {
+      chatHistoryEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [chatHistory]);
 
   const handleSubmission = async (e) => {
     e.preventDefault();
@@ -120,11 +130,12 @@ function InterviewApp() {
                 <span>{entry.text}</span>
               </div>
             ))}
+            {/* This div is used to scroll to the bottom of chat history */}
+            <div ref={chatHistoryEndRef}></div>
           </div>
         )}
 
         {/* user response input */}
-
         {chatHistory.length > 0 && (
           <div className={styles.userInputContainer}>
             <input
