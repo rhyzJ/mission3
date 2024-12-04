@@ -29,7 +29,10 @@ async function initializeGenerativeAI() {
 
 // Start interview route
 
-const prompt = `You are a highly skilled and experienced job interviewer specializing in the field of ${jobTitle}. The candidate is applying for the role of ${jobTitle}. Assume the candidate has [User inputs experience level here: e.g., entry-level, mid-level, senior-level] experience.
+app.post("/api/startInterview", async (req, res) => {
+  const { jobTitle, resetInterview } = req.body;
+
+  const prompt = `You are a highly skilled and experienced job interviewer specializing in the field of ${jobTitle}. The candidate is applying for the role of ${jobTitle}. Assume the candidate has [User inputs experience level here: e.g., entry-level, mid-level, senior-level] experience.
 
               The interview begins by asking the candidate, "Tell me about yourself, focusing on your relevant skills and experience for this ${jobTitle} role." After the candidate responds, ask at least six follow-up questions, one at a time, based on their response and tailored to the specific job title and their answers. Prioritize questions that assess:
               * **Technical Skills:** Ask questions that directly evaluate the candidate's proficiency in relevant technologies, tools, and methodologies.
@@ -43,9 +46,6 @@ const prompt = `You are a highly skilled and experienced job interviewer special
               After the candidate answers all your questions, provide a concise summary of the interview, including strengths and areas for improvement.
 
               Begin the interview now.`;
-
-app.post("/api/startInterview", async (req, res) => {
-  const { jobTitle, resetInterview } = req.body;
 
   try {
     const model = await initializeGenerativeAI();
