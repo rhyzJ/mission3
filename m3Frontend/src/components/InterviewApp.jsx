@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import styles from "./InterviewApp.module.css";
 
@@ -7,8 +7,9 @@ function InterviewApp() {
   const [chatHistory, setChatHistory] = useState([]);
   const [userResponse, setUserResponse] = useState("");
   const [resetInterview, setResetInterview] = useState(false);
+  const [questionCount, setQuestionCount] = useState(0);
 
-  //   form submissoion
+
   const handleSubmission = async (e) => {
     e.preventDefault();
     try {
@@ -18,16 +19,35 @@ function InterviewApp() {
         resetInterview,
       });
 
-      //updating the chat history with user/ai responses (ui)
 
       setChatHistory([
         ...chatHistory,
         { role: "user", text: userResponse },
         { role: "ai", text: response.data.aiResponse },
       ]);
-      setUserResponse(""); //clear
+
+      setUserResponse(""); // clear
+      setQuestionCount(questionCount + 1);
+
+      if (questionCount >= 6) {
+        const feedbackResponse = await axios.post(
+          "http://localhost:4000/api/feedback",
+          {
+            jobTitle,
+            chatHistory,
+          }
+        );
+        setChatHistory([
+          ...chatHistory,
+          { role: "ai", text: feedbackResponse.data.feedback },
+        ]);
+      }
     } catch (error) {
-      console.error(" ❌ error sending reponse:", error);
+      console.error(
+        "❌ Error sending response:",
+        error.response ? error.response.data : error.message
+      );
+
     }
   };
 
@@ -35,21 +55,31 @@ function InterviewApp() {
     setChatHistory([]);
     setUserResponse("");
     setResetInterview(true);
+    setQuestionCount(0);
+
   };
 
   const handleStartInterview = async () => {
     try {
-      await axios.post("http://localhost:4000/api/startInterview", {
-        jobTitle,
-        resetInterview,
-      });
-
-      setChatHistory([
+      const response = await axios.post(
+        "http://localhost:4000/api/startInterview",
         {
-          role: "ai",
-          text: response.data.aiResponse,
-        },
-      ]);
+          jobTitle,
+          resetInterview: true, // Ensure resetInterview is true to initialize the chat session
+        }
+      );
+
+      if (response.data && response.data.aiResponse) {
+        setChatHistory([
+          {
+            role: "ai",
+            text: response.data.aiResponse,
+          },
+        ]);
+      } else {
+        console.log("No content received from the server.");
+      }
+
       console.log("Interview started");
     } catch (error) {
       console.error("❌ Error starting interview:", error);
@@ -75,7 +105,9 @@ function InterviewApp() {
             className={styles.inputBox}
           />
         </div>
-        {/*chat history display */}
+
+        {/* chat history display */}
+
         {chatHistory.length > 0 && (
           <div className={styles.chatHistoryContainer}>
             {chatHistory.map((entry, index) => (
