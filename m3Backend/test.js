@@ -19,5 +19,3 @@ async function getAiResponse() {
 getAiResponse().catch((error) => {
   console.error("Error occurred:", error);
 });
-
-// testing my branch
