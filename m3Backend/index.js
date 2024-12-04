@@ -2,10 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 require("dotenv").config();
-
 const app = express();
 
-// Middleware
+// middleware
 app.use(cors());
 app.use(express.json());
 
@@ -29,6 +28,7 @@ async function initializeGenerativeAI() {
 }
 
 // Start interview route
+
 app.post("/api/startInterview", async (req, res) => {
   const { jobTitle, resetInterview } = req.body;
 

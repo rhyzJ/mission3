@@ -9,6 +9,7 @@ function InterviewApp() {
   const [resetInterview, setResetInterview] = useState(false);
   const [questionCount, setQuestionCount] = useState(0);
 
+
   const handleSubmission = async (e) => {
     e.preventDefault();
     try {
@@ -18,11 +19,13 @@ function InterviewApp() {
         resetInterview,
       });
 
+
       setChatHistory([
         ...chatHistory,
         { role: "user", text: userResponse },
         { role: "ai", text: response.data.aiResponse },
       ]);
+
       setUserResponse(""); // clear
       setQuestionCount(questionCount + 1);
 
@@ -44,6 +47,7 @@ function InterviewApp() {
         "❌ Error sending response:",
         error.response ? error.response.data : error.message
       );
+
     }
   };
 
@@ -52,6 +56,7 @@ function InterviewApp() {
     setUserResponse("");
     setResetInterview(true);
     setQuestionCount(0);
+
   };
 
   const handleStartInterview = async () => {
@@ -74,6 +79,7 @@ function InterviewApp() {
       } else {
         console.log("No content received from the server.");
       }
+
       console.log("Interview started");
     } catch (error) {
       console.error("❌ Error starting interview:", error);
@@ -99,7 +105,9 @@ function InterviewApp() {
             className={styles.inputBox}
           />
         </div>
+
         {/* chat history display */}
+
         {chatHistory.length > 0 && (
           <div className={styles.chatHistoryContainer}>
             {chatHistory.map((entry, index) => (
