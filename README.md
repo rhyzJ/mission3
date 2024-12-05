@@ -10,13 +10,13 @@
 
 <h3>Project Brief: Build a Mock Job Interview Application using Generative AI
 </h3><br />
-Due to the insurance process redesign, management expects a lot of staff in the department to be re-trained into other roles.  Build an application that a staff members can use to practice job interviews for another role. <br /><br />
+Due to the insurance process redesign, management expects a lot of staff in the department to be re-trained into other roles.  Build an application that staff members can use to practice job interviews for another role. <br /><br />
   
 <h3>Our members:</h3><br  />
   
-**Sam** 👽 <br /> <em>Handled converting "Model" and "Year" of a car to a suggested "Car Value"</em> aka API 1<br /><br />
-**Rhy** 🦆 <br /> <em>Handled converting "Claim History" to a "Risk Rating" </em> aka API 2 <<br /><br />
-**Valentine** 🥲 <br /> <em> Handled converting "Car Value" and "Risk Rating" to a "Quote" </em> aka API 3<br /><br />
+**Sam** 👽 <br /> 
+**Rhy** 🦆 <br /> 
+**Valentine** 🥲 <br />
 **Nova** 🐈‍⬛ <br /> <em> Did cat stuff </em><br />
 **Puck** 🐈 <br /> <em> Also did cat stuff </em><br />
 
