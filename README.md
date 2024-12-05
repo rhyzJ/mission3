@@ -39,7 +39,13 @@ Due to the insurance process redesign, management expects a lot of staff in the 
     npm i
     ```
 
-3. **Run the program:**
+3. **Run the program from Frontend folder:**
+
+    ```bash
+    npm run dev
+    ```
+    
+4. **Start server in Backend Folder:**
 
     ```bash
     npm run dev
