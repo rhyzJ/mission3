@@ -13,11 +13,11 @@ Due to the insurance process redesign, management expects a lot of staff in the 
   
 <h3>Our members:</h3><br  />
   
-**Sam** 👽 <br /> 
-**Rhy** 🦆 <br /> 
-**Valentine** 🥲 <br />
-**Nova** 🐈‍⬛ <em> Did cat stuff </em><br />
-**Puck** 🐈 <em> Also did cat stuff </em><br />
+👽 **Sam** 👽 <br /> 
+🦆 **Rhy** 🦆 <br /> 
+🥲 **Valentine** 🥲 <br />
+🐈‍⬛ **Nova** 🐈‍⬛ <em> Did cat stuff </em><br />
+🐈 **Puck** 🐈 <em> Also did cat stuff </em><br />
 
 
    <br />
