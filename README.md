@@ -16,8 +16,8 @@ Due to the insurance process redesign, management expects a lot of staff in the 
 **Sam** 👽 <br /> 
 **Rhy** 🦆 <br /> 
 **Valentine** 🥲 <br />
-**Nova** 🐈‍⬛ <br /> <em> Did cat stuff </em><br />
-**Puck** 🐈 <br /> <em> Also did cat stuff </em><br />
+**Nova** 🐈‍⬛ <em> Did cat stuff </em><br />
+**Puck** 🐈 <em> Also did cat stuff </em><br />
 
 
    <br />
