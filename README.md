@@ -56,7 +56,7 @@ Due to the insurance process redesign, management expects a lot of staff in the 
 
 ---
 
-Project Link: [Mission Three]([https://github.com/rhyzJ/mission3.git](https://github.com/rhyzJ/mission3)​)
+Project Link: [Mission Three](https://github.com/rhyzJ/mission3​)
 
 ---
 
