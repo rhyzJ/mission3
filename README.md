@@ -21,7 +21,7 @@ Due to the insurance process redesign, management expects a lot of staff in the 
 
 
    <br />
-    <a href="https://github.com/rhyzJ/mission3.git​"><strong>✨ Squiz at Our Cool Code » ✨</strong></a>
+    <a href="https://github.com/rhyzJ/mission3"><strong>✨ Squiz at Our Cool Code » ✨</strong></a>
 </p>
 </div>
 
