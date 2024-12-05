@@ -3,7 +3,7 @@
   <a href="https://github.com/rhyzJ/mission3​">
     <img src="https://www.turners.co.nz/assets/images/logo/square_logo_car.png" alt="Mission 3 Logo" style="border-radius: 50%;" />
   </a>
-<h1 align="center">🦆 Dream Team</h1><br />
+<h1 align="center">Mission 3</h1><br />
 
 <p align="center">
 
