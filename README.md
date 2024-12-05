@@ -13,10 +13,10 @@ Due to the insurance process redesign, management expects a lot of staff in the 
   
 <h3>Our members:</h3><br  />
   
-**Sam** 👽 <br /><em> on the backend</em><br /><br /> 
-**Rhy** 🦆 <br /><em>on the frontend</em><br /><br /> 
-**Valentine** 🥲 <br /><em>on TDD implementation </em><br /><br />
-**Nova & Puck** 🐈‍⬛🐈 <br /><em> Did cat stuff </em><br />
+**Sam** 👽 <br /><em> = on the backend</em><br /><br /> 
+**Rhy** 🦆 <br /><em> = on the frontend</em><br /><br /> 
+**Valentine** 🥲 <br /><em>= on TDD implementation </em><br /><br />
+**Nova & Puck** 🐈‍⬛🐈 <br /><em> = Did cat stuff </em><br />
 
 
    <br />
