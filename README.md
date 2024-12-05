@@ -3,9 +3,8 @@
   <a href="https://github.com/rhyzJ/mission3.git​">
     <img src="https://www.turners.co.nz/assets/images/logo/square_logo_car.png" alt="Mission 3 Logo" style="border-radius: 50%;" />
   </a>
-<h1 align="center">🦆 Quack Overflow's Mission 2 🦆 (Group 3)</h1><br />
+<h1 align="center">🦆 Dream Team</h1><br />
 
-<h2 align="center"> 💻 The Frontend Code 💻</h2> <br />
 <p align="center">
 
 <h3>Project Brief: Build a Mock Job Interview Application using Generative AI
