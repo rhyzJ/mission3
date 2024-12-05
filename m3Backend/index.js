@@ -34,38 +34,31 @@ async function initializeGenerativeAI(prompt, jobTitle) {
 
 app.post("/api/startInterview", async (req, res) => {
   const { jobTitle, resetInterview } = req.body;
-
-  const prompt = `The candidate is applying for the role of ${jobTitle}. Assume the candidate has [User inputs experience level here: e.g., entry-level, mid-level, senior-level] experience.
-The interview begins by asking the candidate, "Tell me about yourself, focusing on your relevant skills and experience for this ${jobTitle} role." After the candidate responds, ask at least six follow-up questions, one at a time, based on their response and tailored to the specific job title and their answers. Prioritize questions that assess:
-Technical Skills: Ask questions that directly evaluate the candidate's proficiency in relevant technologies, tools, and methodologies.
-Problem-Solving: Ask questions requiring the candidate to describe how they approached and solved complex problems.
-Teamwork & Collaboration: Assess their ability to work effectively in team environments.
-Communication: Evaluate their ability to clearly articulate technical concepts and ideas.
-Leadership (If Applicable): Assess leadership qualities for senior-level roles.
-Avoid pre-programmed questions; instead, dynamically generate relevant questions to probe deeper into their responses.
-After the candidate answers all your questions, provide a concise summary of the interview, including strengths and areas for improvement.
-Begin the interview now.`;
+  const prompt = `
+  Simulate a job interview for a ${jobTitle} position. 
+  The interview begins with the candidate giving you their name:
+  After each candidate response, generate one insightful follow-up question ONE AT A TIME. 
+  These questions should dynamically adapt to the candidate's answers.
+  * Avoid repeated questions. 
+  * Questions must be contextually relevant and thought-provoking. 
+  * Maintain a professional, encouraging, and conversational tone. 
+  After you have asked 6 questions, provide: 
+  1. A concise interview summary, highlighting strengths and areas for improvement. 
+  2. A closing remark thanking the candidate. 
+`;
 
   try {
     const model = await initializeGenerativeAI(prompt, jobTitle);
 
     chatSession = model.startChat({
-      history: [
-        {
-          role: "user",
-          parts: [
-            {
-              text: prompt,
-            },
-          ],
-        },
-      ],
+      history: [],
     });
 
-    console.log("Chat session initialized:", chatSession);
+    console.log(chatSession.history);
 
-    const initialResponse =
-      "Hi there I'm an Interview chatbot, what is your name?"; // Initial response from AI to start the interview
+    // console.log("Chat session initialized:", chatSession);
+
+    const initialResponse = `Hi there I'm an Interview chatbot Yapper. Today we will be doing a mock interview for the position of ${jobTitle}, Let's start off by telling me your name`; // Initial response from AI to start the interview
     res.json({ aiResponse: initialResponse });
   } catch (error) {
     console.error("❌ Error in starting interview:", error);
@@ -79,7 +72,7 @@ Begin the interview now.`;
 // Mock interview route
 app.post("/api/interview", async (req, res) => {
   const { userResponse } = req.body;
-
+  console.log(chatSession);
   try {
     if (!chatSession) {
       return res.status(400).json({
@@ -94,12 +87,9 @@ app.post("/api/interview", async (req, res) => {
       });
     }
 
-    const result = await chatSession.sendMessageStream(userResponse);
-    let aiResponse = "";
-
-    for await (const chunk of result.stream) {
-      aiResponse += chunk.text();
-    }
+    const result = (await chatSession.sendMessage(userResponse)).response;
+    console.log("RESULT: ", result);
+    let aiResponse = result.text();
 
     res.json({ aiResponse });
   } catch (error) {
