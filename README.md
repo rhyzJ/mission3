@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/rhyzJ/mission3.git​">
+  <a href="https://github.com/rhyzJ/mission3​">
     <img src="https://www.turners.co.nz/assets/images/logo/square_logo_car.png" alt="Mission 3 Logo" style="border-radius: 50%;" />
   </a>
 <h1 align="center">🦆 Dream Team</h1><br />
@@ -22,10 +22,6 @@ Due to the insurance process redesign, management expects a lot of staff in the 
 
    <br />
     <a href="https://github.com/rhyzJ/mission3"><strong>✨ Squiz at Our Cool Code » ✨</strong></a><br /><br />
-
-  <a href="https://github.com/rhyzJ/mission3/m3Backend"><strong> Frontend » ✨</strong></a><br />
-
-   <a href="https://github.com/rhyzJ/mission3/m3Frontend"><strong> Backend » ✨</strong></a><br />
 </p>
 </div>
 
@@ -60,7 +56,7 @@ Due to the insurance process redesign, management expects a lot of staff in the 
 
 ---
 
-Project Link: [Mission Three - Front End](https://github.com/rhyzJ/mission3.git​)
+Project Link: [Mission Three]([https://github.com/rhyzJ/mission3.git](https://github.com/rhyzJ/mission3)​)
 
 ---
 
@@ -69,7 +65,7 @@ Project Link: [Mission Three - Front End](https://github.com/rhyzJ/mission3.git�
 @ Samuel Humphries
 @ Valentine Ncube
 @ Rhya Johns
-Help from **caffeine**, StackOverflow, Sam's brother, chatGPT and Sam's cats
+Help from **caffeine**, StackOverflow, Sam's brother, chatGPT, and Sam's cats
 
 ---
 
