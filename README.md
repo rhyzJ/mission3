@@ -11,7 +11,7 @@
 </h3><br />
 Due to the insurance process redesign, management expects a lot of staff in the department to be re-trained into other roles.  <br /> Build an application that staff members can use to practice job interviews for another role. <br /><br />
   
-<h3>Our members:</h3><br  />
+<h2>Our Members:</h2><br  />
   
 **Sam** 👽 <br /><em> On the backend</em><br /><br /> 
 **Rhy** 🦆 <br /><em> On the frontend</em><br /><br /> 
