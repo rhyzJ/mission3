@@ -62,10 +62,10 @@ Project Link: [Mission Three]([https://github.com/rhyzJ/mission3.git](https://gi
 
 ## 🌸 Acknowledgments 🌸
 
-@ Samuel Humphries
-@ Valentine Ncube
-@ Rhya Johns
-Help from **caffeine**, StackOverflow, Sam's brother, chatGPT, and Sam's cats
+- @ Samuel Humphries
+- @ Valentine Ncube
+- @ Rhya Johns
+- Help from **caffeine**, StackOverflow, Sam's brother, chatGPT, and Sam's cats
 
 ---
 
