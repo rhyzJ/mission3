@@ -1,23 +1,21 @@
 <br />
 <div align="center">
-  <a href="https://github.com/rhyzJ/mission3​">
+  <a href="https://github.com/rhyzJ/job-interview-chatbot​">
     <img src="https://www.turners.co.nz/assets/images/logo/square_logo_car.png" alt="Mission 3 Logo" style="border-radius: 50%;" />
   </a>
-<h1 align="center">Mission 3</h1><br />
+<h1 align="center">Practice Job Interview Chatbot</h1><br />
 
 <p align="center">
 
 <h3>Project Brief: Build a Mock Job Interview Application using Generative AI
 </h3><br />
-Due to the insurance process redesign, management expects a lot of staff in the department to be re-trained into other roles.  <br /> Build an application that staff members can use to practice job interviews for another role. <br /><br />
+Due to the insurance process redesign, management expects a lot of staff in the department to be re-trained into other roles.  <br /> Build an application for staff members to practice job interviews for another role. <br /><br />
   
 <h2>Our Members:</h2><br  />
   
 **Sam** 👽 <br /><em> On the backend</em><br /><br /> 
 **Rhy** 🦆 <br /><em> On the frontend</em><br /><br /> 
 **Valentine** 🥲 <br /><em> On TDD implementation </em><br /><br />
-**Nova & Puck** 🐈‍⬛🐈 <br /><em> Did cat stuff </em><br />
-
 
    <br />
     <a href="https://github.com/rhyzJ/mission3"><strong>✨ Squiz at Our Cool Code » ✨</strong></a><br /><br />
@@ -61,7 +59,7 @@ Due to the insurance process redesign, management expects a lot of staff in the 
 
 ---
 
-Project Link: [Mission Three](https://github.com/rhyzJ/mission3​)
+Project Link: [Mission Three](https://github.com/rhyzJ/job-interview-chatbot​​)
 
 ---
 
@@ -70,7 +68,7 @@ Project Link: [Mission Three](https://github.com/rhyzJ/mission3​)
 - @ Samuel Humphries
 - @ Valentine Ncube
 - @ Rhya Johns <br  />
-<p>with help from **caffeine**, StackOverflow, Sam's brother, chatGPT, and Sam's cats<p/>
+
 
 ---
 
